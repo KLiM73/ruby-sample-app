@@ -1,0 +1,18 @@
+version: "3"
+
+services:
+  ruby:
+    build:
+      context: .
+      dockerfile: .deploy/Dockerfile
+    volumes:
+      - .:/app
+
+  nginx:
+    build:
+      context: .
+      dockerfile: .deploy/nginx.Dockerfile
+    ports:
+      - 80:80
+    volumes:
+      - .:/app
