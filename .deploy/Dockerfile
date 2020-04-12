@@ -1,7 +1,8 @@
-FROM ruby:2.7
+FROM ruby:2.6
 
 COPY .deploy/.gemrc /root/.gemrc
 RUN gem install rails -v 5.1.6
+RUN gem install bundler
 WORKDIR /app
 
 # install Nodejs
