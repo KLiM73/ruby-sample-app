@@ -16,3 +16,16 @@ services:
       - 80:80
     volumes:
       - .:/app
+
+  postgres:
+    image: postgres:12
+    environment:
+      POSTGRES_PASSWORD: qweqwe
+      POSTGRES_DB: rails-dev
+    volumes:
+      - db:/var/lib/postgresql/data
+    ports:
+      - 5432:5432
+
+volumes:
+  db:
