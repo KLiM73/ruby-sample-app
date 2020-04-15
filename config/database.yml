@@ -6,16 +6,16 @@
 #
 default: &default
   adapter: sqlite3
-  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  pool: <%= ENV.fetch('RAILS_MAX_THREADS') { 5 } %>
   timeout: 5000
 
 development:
   adapter: postgresql
-  database: rails-dev
-  pool: 5
-  host: postgres
-  user: postgres
-  password: qweqwe
+  database: <%= ENV.fetch('RAILS_PG_DB') %>
+  pool: <%= ENV.fetch('RAILS_MAX_THREADS') { 5 } %>
+  host: <%= ENV.fetch('RAILS_PG_HOST') %>
+  user: <%= ENV.fetch('RAILS_PG_USER') %>
+  password: <%= ENV.fetch('RAILS_PG_PASS') %>
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
