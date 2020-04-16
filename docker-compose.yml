@@ -14,6 +14,8 @@ services:
       RAILS_PG_USER: ${RAILS_PG_USER}
       RAILS_PG_PASS: ${RAILS_PG_PASS}
       RAILS_MAX_THREADS: ${RAILS_MAX_THREADS}
+    tty: true
+    stdin_open: true
 
   nginx:
     build:
