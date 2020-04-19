@@ -48,8 +48,8 @@ class UsersLoginTest < ActionDispatch::IntegrationTest
   test 'login with remembering' do
     log_in_as(@user, remember_me: '1')
     # Get signed cookies
-    jar = ActionDispatch::Cookies::CookieJar.build(request, cookies.to_hash)
-    assert_equal jar.signed[:remember_token], assigns(:user).remember_token
+    # jar = ActionDispatch::Cookies::CookieJar.build(request, cookies.to_hash)
+    assert_equal cookies[:remember_token], assigns(:user).remember_token
   end
 
   test 'login without remembering' do
