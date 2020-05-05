@@ -10,11 +10,11 @@ up:
 down:
 	docker-compose down
 
-##migrate		Migration database containers
-migrate:
-	docker-compose run php php artisan migrate --seed
+##test-run		Run tests
+test-run:
+	docker-compose exec ruby rails test
 
-##ssh-ruby			SSH into php
+##ssh-ruby		SSH into ruby
 ssh-ruby:
 	docker-compose exec ruby bash -i
 
